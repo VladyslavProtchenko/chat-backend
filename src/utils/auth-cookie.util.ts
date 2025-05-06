@@ -6,16 +6,16 @@ export function setAuthCookies(
 ) {
   res.cookie('access_token', tokens.accessToken, {
     httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'none',
+    secure: true,
     maxAge: 15 * 60 * 1000,
     path: '/',
   });
 
   res.cookie('refresh_token', tokens.refreshToken, {
     httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'none',
+    secure: true,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     path: '/',
   });

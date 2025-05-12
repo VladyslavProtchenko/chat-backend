@@ -8,6 +8,7 @@ export function setAuthCookies(
     httpOnly: true,
     sameSite: 'none',
     secure: true,
+    domain: process.env.DOMAIN_URL,
     maxAge: 15 * 60 * 1000,
     path: '/',
   });
@@ -16,6 +17,7 @@ export function setAuthCookies(
     httpOnly: true,
     sameSite: 'none',
     secure: true,
+    domain: process.env.DOMAIN_URL,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     path: '/',
   });
